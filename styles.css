@@ -168,8 +168,10 @@ button:hover {
     background-color: var(--button-hover);
 }
 
-/* Remove Twitter-specific styles */
-#shareBtn,
+#shareBtn {
+    background-color: #1DA1F2; /* Twitter blue */
+}
+
 #shareBtn:hover {
-    display: none;
+    background-color: #1a8cd8; /* Darker Twitter blue */
 } 
