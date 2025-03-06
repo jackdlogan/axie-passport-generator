@@ -1,10 +1,11 @@
+import config from './config.js';
+
 class PassportGenerator {
     constructor() {
         this.canvas = document.getElementById('passportCanvas');
         this.ctx = this.canvas.getContext('2d');
         this.form = document.getElementById('passportForm');
         this.exportBtn = document.getElementById('exportBtn');
-        this.shareBtn = document.getElementById('shareBtn');
         this.loadingSpinner = document.querySelector('.loading-spinner');
         this.downloadButtons = document.querySelector('.download-buttons');
         
@@ -108,10 +109,6 @@ class PassportGenerator {
         
         this.exportBtn.addEventListener('click', () => {
             this.exportPassport();
-        });
-        
-        this.shareBtn.addEventListener('click', () => {
-            this.sharePassport();
         });
     }
     
@@ -383,46 +380,6 @@ class PassportGenerator {
             alert('Failed to export passport. Please try again.');
         }
     }
-    
-    async sharePassport() {
-        try {
-            // Get the axie ID and class for the tweet
-            const axieId = this.form.axieId.value;
-            const axieClass = await this.getAxieClass(axieId);
-            
-            // Convert canvas to blob
-            const blob = await new Promise(resolve => {
-                this.canvas.toBlob(resolve, 'image/png', 1.0);
-            });
-            
-            // Create a temporary URL for the image
-            const imageUrl = URL.createObjectURL(blob);
-            
-            // Compose tweet text
-            const tweetText = "Share your passport to celebrate Atia's Legacy #axieinfinity #atiaslegacy";
-            
-            // Open Twitter share dialog in a new window
-            const width = 550;
-            const height = 420;
-            const left = (window.screen.width - width) / 2;
-            const top = (window.screen.height - height) / 2;
-            
-            // Create Twitter intent URL
-            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
-            
-            window.open(
-                twitterUrl,
-                'Share on Twitter',
-                `width=${width},height=${height},left=${left},top=${top}`
-            );
-            
-            // Clean up
-            URL.revokeObjectURL(imageUrl);
-        } catch (error) {
-            console.error('Error sharing to Twitter:', error);
-            alert('Failed to share to Twitter. Please try again.');
-        }
-    }
 
     loadClassImage(className) {
         return new Promise((resolve) => {
@@ -454,7 +411,7 @@ class PassportGenerator {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    "x-api-key": "mhkLTvd8ayQ8arSANYK48sbJ6kmf95o9"
+                    "x-api-key": config.API_KEY
                 },
                 body: JSON.stringify({ query })
             });
