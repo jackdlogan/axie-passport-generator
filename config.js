@@ -1,5 +1,5 @@
 const config = {
-    API_KEY: process.env.AXIE_API_KEY
+    API_KEY: window.AXIE_API_KEY || ''  // Access from global scope
 };
 
 export default config; 
