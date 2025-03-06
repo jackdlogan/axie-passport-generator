@@ -252,15 +252,15 @@ class PassportGenerator {
                 day: '2-digit', 
                 year: 'numeric'
             }), textX, startY + lineHeight * 3);
-            this.ctx.fillText('Eternity', textX + textX*0.56, startY + lineHeight *3 );
+            this.ctx.fillText('Until I Sell', textX + textX*0.56, startY + lineHeight *3 );
 
             // Second text style
             this.ctx.font = 'bold 24px "Atkinson Hyperlegible"';
             this.ctx.letterSpacing = '6px';
             this.ctx.fillStyle = this.classTextColors[axieClass];
             const ownerText = formData.get('owner').toUpperCase();
-            const line1 = `AXIEINFINITY<<< ${ownerText} `.padEnd(67, '<');
-            const line2 = `LUNACIAN<<< ${axieId} `.padEnd(67, '<');
+            const line1 = `LUNACIAN<<< ${ownerText} `.padEnd(67, '<');
+            const line2 = `AXIE<INFINITY<<<<< ${axieId} `.padEnd(67, '<');
             this.ctx.fillText(line1, 240, startY*1.4);
             this.ctx.fillText(line2, 240, startY*1.425);
 
