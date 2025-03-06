@@ -1,0 +1,9 @@
+{
+  "name": "axie-passport-generator",
+  "version": "1.0.0",
+  "description": "Axie Infinity Passport Generator",
+  "main": "script.js",
+  "scripts": {
+    "build": "node build.js"
+  }
+} 

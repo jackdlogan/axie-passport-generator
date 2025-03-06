@@ -1,5 +1,5 @@
 const config = {
-    API_KEY: process.env.AXIE_API_KEY  // fallback for development
+    API_KEY: 'mhkLTvd8ayQ8arSANYK48sbJ6kmf95o9' // development API key
 };
 
 export default config; 
