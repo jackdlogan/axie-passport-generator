@@ -1,0 +1,177 @@
+:root {
+    --bg-dark: #1a1a1a;
+    --card-dark: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --border-color: #404040;
+    --input-bg: #3d3d3d;
+    --button-bg: #4CAF50;
+    --button-hover: #45a049;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--bg-dark);
+    padding: 20px;
+    color: var(--text-primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.form-container {
+    background: var(--card-dark);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    max-width: 400px;
+    border: 1px solid var(--border-color);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-secondary);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--button-bg);
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+.preview-container {
+    background: var(--card-dark);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+#passportCanvas {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: none;
+    background-color: transparent;
+}
+
+/* Loading spinner styles */
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loading-spinner p {
+    color: var(--text-secondary);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--border-color);
+    border-top: 5px solid var(--button-bg);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide download buttons initially */
+.download-buttons {
+    display: none;
+    gap: 10px;
+    justify-content: center;
+}
+
+#copyBtn {
+    background-color: var(--button-bg);
+}
+
+#copyBtn:hover {
+    background-color: var(--button-hover);
+}
+
+#exportBtn {
+    background-color: var(--button-bg);
+}
+
+#exportBtn:hover {
+    background-color: var(--button-hover);
+}
+
+#shareBtn {
+    background-color: #1DA1F2; /* Twitter blue */
+}
+
+#shareBtn:hover {
+    background-color: #1a8cd8; /* Darker Twitter blue */
+} 
