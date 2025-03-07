@@ -252,7 +252,7 @@ class PassportGenerator {
                 day: '2-digit', 
                 year: 'numeric'
             }), textX, startY + lineHeight * 3);
-            const holdingPeriods = ["Never", "Until I sell", "I don't know", "It stop being cute", "Eternity" , "When I need to pay rent"];
+            const holdingPeriods = ["Never", "Until I sell my axie", "I don't know", "Eternity" ];
             const randomPhrase = holdingPeriods[Math.floor(Math.random() * holdingPeriods.length)];
             this.ctx.fillText(randomPhrase, textX + textX*0.56, startY + lineHeight *3 );
 
